@@ -4,4 +4,9 @@ defmodule SwapiGraphql.Schema do
   query do
     # fields
   end
+
+  object :person do
+    field :id, :id
+    field :name, :string
+  end
 end
