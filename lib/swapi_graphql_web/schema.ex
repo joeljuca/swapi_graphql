@@ -14,4 +14,9 @@ defmodule SwapiGraphql.Schema do
     field :id, :id
     field :name, :string
   end
+
+  object :planet do
+    field :id, :id
+    field :name, :string
+  end
 end
