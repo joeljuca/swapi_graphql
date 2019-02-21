@@ -1,4 +1,4 @@
-defmodule SwapiGraphql.Schema do
+defmodule SwapiGraphqlWeb.Schema do
   use Absinthe.Schema
 
   query do
