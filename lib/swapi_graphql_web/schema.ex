@@ -2,7 +2,12 @@ defmodule SwapiGraphql.Schema do
   use Absinthe.Schema
 
   query do
-    # fields
+    field :films,     list_of(:film)
+    field :people,    list_of(:person)
+    field :planets,   list_of(:planet)
+    field :species,   list_of(:specie)
+    field :starships, list_of(:starship)
+    field :vehicles,  list_of(:vehicle)
   end
 
   object :film do
