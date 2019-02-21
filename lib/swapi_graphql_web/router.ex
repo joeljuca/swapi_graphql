@@ -23,4 +23,10 @@ defmodule SwapiGraphqlWeb.Router do
   # scope "/api", SwapiGraphqlWeb do
   #   pipe_through :api
   # end
+
+  forward "/api", Absinthe.Plug,
+    schema: SwapiGraphqlWeb.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: SwapiGraphqlWeb.Schema
 end
