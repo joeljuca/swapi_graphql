@@ -25,8 +25,10 @@ defmodule SwapiGraphqlWeb.Router do
   # end
 
   forward "/api", Absinthe.Plug,
-    schema: SwapiGraphqlWeb.Schema
+    schema: SwapiGraphqlWeb.Schema,
+    json_codec: Jason
 
   forward "/graphiql", Absinthe.Plug.GraphiQL,
-    schema: SwapiGraphqlWeb.Schema
+    schema: SwapiGraphqlWeb.Schema,
+    json_codec: Jason
 end
