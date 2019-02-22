@@ -1,5 +1,7 @@
 # SwapiGraphql
 
+[![CircleCI](https://circleci.com/gh/joelwallis/swapi_graphql/tree/master.svg?style=svg)](https://circleci.com/gh/joelwallis/swapi_graphql/tree/master)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
