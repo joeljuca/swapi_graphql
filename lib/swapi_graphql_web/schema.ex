@@ -1,24 +1,30 @@
 defmodule SwapiGraphqlWeb.Schema do
   use Absinthe.Schema
+  alias SwapiGraphqlWeb.FilmResolver
+  alias SwapiGraphqlWeb.PersonResolver
+  alias SwapiGraphqlWeb.PlanetResolver
+  alias SwapiGraphqlWeb.SpecieResolver
+  alias SwapiGraphqlWeb.StarshipResolver
+  alias SwapiGraphqlWeb.VehicleResolver
 
   query do
     field :films,     list_of(:film) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :title => "Film 1" } ]} end
+      resolve(&FilmResolver.resolve/3)
     end
     field :people,    list_of(:person) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :name => "Person 1" } ]} end
+      resolve(&PersonResolver.resolve/3)
     end
     field :planets,   list_of(:planet) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :name => "Planet 1" } ]} end
+      resolve(&PlanetResolver.resolve/3)
     end
     field :species,   list_of(:specie) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :name => "Specie 1" } ]} end
+      resolve(&SpecieResolver.resolve/3)
     end
     field :starships, list_of(:starship) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :name => "Starship 1" } ]} end
+      resolve(&StarshipResolver.resolve/3)
     end
     field :vehicles,  list_of(:vehicle) do
-      resolve fn _, _, _ -> {:ok, [ %{ :id => 1, :name => "Vehicle 1" } ]} end
+      resolve(&VehicleResolver.resolve/3)
     end
   end
 
